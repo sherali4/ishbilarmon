@@ -1,28 +1,49 @@
 
 <div class="col-md-9">
   <h1 class="text-success text-center">{{ turi }}</h1>
+<!--  <p>{{tags}}</p>-->
+
+  {% if tags %}
+  {% for t in tags %}
+
+
+  <button type="button" class="{% if t == davr %}btn btn-info text-light{% else %}btn btn-outline-primary{% endif %}"><a class="{% if t == davr %}text-light{% endif %}" href="{% url 'view_davr' siat_api_id t %}">{{t}}</a></button>
+
+  {% endfor %}
+  {% endif %}
+
+
   <hr>
-    <table class="table">
-      <thead>
+    <table class="table table-bordered border-body-tertiary table-hover table-striped">
+      <thead class="table-light">
         <tr>
           <th scope="col">kod</th>
           <th scope="col">name</th>
-          <th scope="col">{{last}}</th>
+          {% if teng == 0 %}
+          <th scope="col" class="text-primary-emphasis">{{to_last}}</th>
+          {% endif %}
+          <th scope="col" class="">{{last}}</th>
+          {% if teng == 0 %}
           <th scope="col">farq</th>
+          {% endif %}
 
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
       {% for d in data %}
-
         <tr>
           <th scope="row">{{ d.Code }}</th>
-          <th scope="row">{{ d.Klassifikator }}</th>
+          <th scope="row" class="text-success">{{ d.Klassifikator }}</th>
+          {% if teng == 0 %}
+          <th scope="row" class="text-end text-primary-emphasis">{{ d.to_last_value1 }}</th>
+          {% endif %}
           <th scope="row" class="text-end">{{ d.last_value }}</th>
-          {% if "-" in  d.to_last_value %}
+          {% if teng == 0 %}
+          {% if "-" in d.to_last_value %}
           <th scope="row" class="text-end text-danger">{{ d.to_last_value }} %</th>
           {% else %}
           <th scope="row" class="text-end text-success">{{ d.to_last_value }} %</th>
+          {% endif %}
           {% endif %}
 
 

@@ -10,6 +10,7 @@ urlpatterns = [
                   path('siat/', siat, name='siat'),
                   path('siat/<int:siat_id>', view_siat, name='view_siat'),
                   path('siat/api/<int:siat_api_id>', view_siat_api, name='view_siat_api'),
+                  path('siat/api/<int:siat_api_id>/<str:davr>/', view_davr, name='view_davr'),
                   path('about/', about, name='about'),
                   path('services/', services, name='services'),
                   path('contact/', contact, name='contact'),

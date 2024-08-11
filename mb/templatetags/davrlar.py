@@ -10,8 +10,7 @@ def show_categories(id):
     cat = Category.objects.filter(pk = id).first()
     return {
         "mt": mt,
-        'cat': cat.name,
-        'str_id': str(id)
+        'cat': cat.name
             }
 
 @register.inclusion_tag('tags/siat_m.html')
@@ -20,8 +19,6 @@ def show_categories_m(id):
     mt = Malumot.objects.filter(turi_id=mt.turi_id)
     return {
         "mt": mt,
-        'id': id,
-        'str_id': str(id)
 
 
 

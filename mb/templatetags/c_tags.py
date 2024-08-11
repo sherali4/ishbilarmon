@@ -9,6 +9,8 @@ register = template.Library()
 # def get_categories():
 #     return Category.objects.all()
 @register.inclusion_tag('tags/siat_c.html')
-def categories():
+def categories(id=0):
     ct = Category.objects.all()
-    return { "ct": ct }
+    return { "ct": ct,
+             'id': id
+             }

@@ -34,6 +34,17 @@ def view_siat_api(request, siat_api_id):
     return render(request, 'mb/siat_api_id.html', context)
 
 
+def view_davr(request, siat_api_id, davr):
+    context = {
+        'id': siat_api_id,
+        'davr': davr,
+        'name': 'Django',
+        'title': 'Siat.stat.uz'
+    }
+    return render(request, 'mb/siat_davr.html', context)
+
+
+
 def about(request):
     return render(request, 'about.html')
 

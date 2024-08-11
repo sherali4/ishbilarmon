@@ -4,7 +4,7 @@
         Ma'lumotlar turi
       </button>
         {% for c in ct %}
-            <a href="{% url 'view_siat' siat_id=c.pk %}" type="button" class="list-group-item list-group-item-action">{{ c.name }}</a>
+            <a href="{% url 'view_siat' siat_id=c.pk %}" type="button" class="{% if c.pk == id %}list-group-item list-group-item-action bg-info{% else %}list-group-item list-group-item-action{% endif %}">{{ c.name }}</a>
         {% endfor%}
 
     </div>

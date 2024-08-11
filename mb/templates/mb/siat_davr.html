@@ -1,0 +1,39 @@
+{% extends "mb/base.html" %}
+{% load m_tags %}
+{% load table_tags %}
+
+
+
+
+{% block breadcrumb %}
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Bosh sahifa</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'view_siat_api' id %}">{{id}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{davr}}</li>
+          </ol>
+        </nav>
+{% endblock %}
+
+
+
+{% block middle %}
+
+{% show_davr id davr %}
+
+
+
+{% endblock %}
+{% block hero %}
+{% endblock %}
+{% block content %}
+    <h2>SIAT</h2>
+    <p>This is where the home page content goes.</p>
+{% endblock %}
+
+{% block left %}
+
+{% show_categories_m id %}
+
+
+{% endblock %}
