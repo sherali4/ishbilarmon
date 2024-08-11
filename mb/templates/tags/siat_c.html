@@ -1,0 +1,11 @@
+<div class="col-md-3">
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+        Ma'lumotlar turi
+      </button>
+        {% for c in ct %}
+            <a href="{% url 'view_siat' siat_id=c.pk %}" type="button" class="list-group-item list-group-item-action">{{ c.name }}</a>
+        {% endfor%}
+
+    </div>
+</div>

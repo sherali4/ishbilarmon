@@ -1,0 +1,40 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyd
+
+# Environment files
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Database files
+*.sqlite3
+*.db
+
+# Django secret key
+.secret
+
+# Static and media files
+staticfiles/
+media/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Linux
+*~

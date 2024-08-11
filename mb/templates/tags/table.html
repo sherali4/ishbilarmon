@@ -1,0 +1,38 @@
+
+<div class="col-md-9">
+  <h1 class="text-success text-center">{{ turi }}</h1>
+  <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">kod</th>
+          <th scope="col">name</th>
+          <th scope="col">{{last}}</th>
+          <th scope="col">farq</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for d in data %}
+
+        <tr>
+          <th scope="row">{{ d.Code }}</th>
+          <th scope="row">{{ d.Klassifikator }}</th>
+          <th scope="row" class="text-end">{{ d.last_value }}</th>
+          {% if "-" in  d.to_last_value %}
+          <th scope="row" class="text-end text-danger">{{ d.to_last_value }} %</th>
+          {% else %}
+          <th scope="row" class="text-end text-success">{{ d.to_last_value }} %</th>
+          {% endif %}
+
+
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+
+
+
+</div>
+

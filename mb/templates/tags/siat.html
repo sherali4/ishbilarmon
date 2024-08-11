@@ -1,0 +1,11 @@
+<div class="col-md-9">
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active text-center fw-bold" aria-current="true">
+       {{cat}}
+      </button>
+        {% for m in mt %}
+            <a href="{% url 'view_siat_api' siat_api_id=m.raqami %}" type="button" class="list-group-item list-group-item-action">{{ m.raqami }} - {{ m.name }}</a>
+        {% endfor%}
+
+    </div>
+</div>
