@@ -1,0 +1,1 @@
+Ishbilarmonlik statistikasi
