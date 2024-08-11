@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+from django.db.models import Count
+from .models import Category, Malumot
 def index(request):
     context = {
         'name': 'Django',
@@ -10,6 +11,9 @@ def index(request):
     return render(request, 'mb/index.html', context)
 @login_required
 def siat(request):
+    # soni = Category.objects.annotate(items_count=Count('malumotlar'))
+    # for s in soni:
+    #     print(s.name, s.items_count)
     context = {
         'name': 'Django',
         'title': 'Siat.stat.uz'

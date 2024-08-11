@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Category, Malumot
-# Register your models here.
+
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -22,4 +22,5 @@ class MalumotAdmin(admin.ModelAdmin):
     # list_editable = ('is_published', )
     # list_filter = ('is_published', 'bulim')
     # prepopulated_fields = {'slug': ('ism', 'fm')}
+
 admin.site.register(Malumot, MalumotAdmin)

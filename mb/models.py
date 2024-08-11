@@ -11,6 +11,7 @@ class Category(models.Model):
 class Malumot(models.Model):
     name = models.CharField(max_length=400, verbose_name='malumot')
     raqami = models.CharField(max_length=4, verbose_name='raqami')
-    turi = models.ForeignKey(Category, on_delete=models.PROTECT)
+    turi = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='malumotlar')
     def __str__(self):
         return self.raqami
+
