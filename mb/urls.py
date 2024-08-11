@@ -14,7 +14,7 @@ urlpatterns = [
                   path('about/', about, name='about'),
                   path('services/', services, name='services'),
                   path('contact/', contact, name='contact'),
-                  path('accounts/email/', email_view, name='email_view'),
+                  # path('accounts/email/', email_view, name='email_view'),
                   # path('xodimlar', xodimlar, name='xodimlar'),
                   # path('news', news, name='news'),
                   # path('category/<int:category_id>/', get_category),

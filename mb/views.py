@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -8,14 +8,14 @@ def index(request):
         'title': 'Tadbirkorlik statistikasi'
     }
     return render(request, 'mb/index.html', context)
-
+@login_required
 def siat(request):
     context = {
         'name': 'Django',
         'title': 'Siat.stat.uz'
     }
     return render(request, 'mb/siat.html', context)
-
+@login_required
 def view_siat(request, siat_id):
     context = {
         'id': siat_id,
@@ -24,7 +24,7 @@ def view_siat(request, siat_id):
     }
     return render(request, 'mb/siat_id.html', context)
 
-
+@login_required
 def view_siat_api(request, siat_api_id):
     context = {
         'id': siat_api_id,
@@ -33,7 +33,7 @@ def view_siat_api(request, siat_api_id):
     }
     return render(request, 'mb/siat_api_id.html', context)
 
-
+@login_required
 def view_davr(request, siat_api_id, davr):
     context = {
         'id': siat_api_id,
@@ -44,18 +44,18 @@ def view_davr(request, siat_api_id, davr):
     return render(request, 'mb/siat_davr.html', context)
 
 
-
+@login_required
 def about(request):
     return render(request, 'about.html')
-
+@login_required
 def services(request):
     return render(request, 'services.html')
-
+@login_required
 def contact(request):
     return render(request, 'contact.html')
 
 
-
+@login_required
 def email_view(request):
     # Your logic here
     return render(request, 'email_template.html')
