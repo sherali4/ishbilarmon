@@ -4,7 +4,7 @@
        {{cat}}
       </button>
         {% for m in mt %}
-            <a href="{% url 'view_siat_api' siat_api_id=m.raqami %}" type="button" class="list-group-item list-group-item-action">{{ m.raqami }} - {{ m.name }}</a>
+        <a href="{% url 'view_siat_api' siat_api_id=m.raqami %}" type="button" class="list-group-item list-group-item-action"><span class="text-primary">{{ m.raqami }}</span> - {{ m.name }}</a>
         {% endfor%}
 
     </div>
